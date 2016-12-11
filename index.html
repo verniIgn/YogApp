@@ -10,16 +10,91 @@
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<!-- BOOTSTRAP Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
 
 <body>
-	<header>
-		<h1>Welcome to YogApp!</h1>
-		<h3>Here you'll find the best of YouTube's Yoga Content</h3>
-	</header>
-	<main></main>
+	<div class="container-fluid">
+		<div class="row">
+			<header>
+				<div class="col-xs-6">
+				<h1>Welcome to YogApp!</h1>
+					<h3>Here you'll find the best of YouTube's Yoga Content</h3>
+				</div>
+				<div class="col-xs-12">
+					<!-- nav bar here -->
+				</div>
+
+			</header>
+		</div>
+	</div>
+
+
+	<main>
+
+		 <!-- <form>
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" id="firstname"><br>
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" id="lastname"><br>
+        <select multiple name="role" id="role">
+            <option value=" ">Select a role</option>
+        </select>
+        <img src="http://placehold.it/275x275" id='img'>
+        <button type="submit" class="save">Save</button>
+      </form> -->
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-18">
+					<h1>Main Search!</h1>
+					<form action="" method="get" id="main-search">
+						<label for="key-word">Key Word</label>
+						<input type="text" id="key-word">
+						<input type="submit" value="Search!">
+						
+					</form>
+				</div>
+				
+			</div>
+		</div>
+
+
+
+
+		<h1>Filter your search</h1>
+		<!-- This form was built using Boostrap -->
+		<form>
+  			<div class="form-group">
+    			<label for="inputLevel">Chose Your Level</label>
+    			<input type="text" class="form-control" id="inputLevel">
+ 			 </div>
+ 			 <div class="form-group">
+    			<label for="inputLength">Length</label>
+    			<input type="number" class="form-control" id="inputLength">
+ 			 </div>
+ 			 <div class="form-group">
+    			<label for="inputStyle">Style</label>
+    			<input type="text" class="form-control" id="inputStyle">
+ 			 </div>
+ 			 <div class="form-group">
+    			<label for="inputLocation">Location</label>
+    			<input type="text" class="form-control" id="inputLocation">
+ 			 </div>
+  			
+
+
+  			<button type="submit" value="submit" class="btn btn-default">Submit(Search!)</button>
+			
+			</form>
+			
+
+
+	</main>
+	
+
 	<footer></footer>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
