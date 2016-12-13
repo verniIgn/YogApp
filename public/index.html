@@ -21,11 +21,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<header>
-				<div class="col-xs-4">
-				<h1>Welcome to YogApp!</h1>
-					<h3>Here you'll find the best of YouTube's Yoga Content</h3>
+				<div class="col-sm-4">
+				<h1>Yog.App</h1>
+					<h2>YouTube's Best Yoga Content</h2>
 				</div>
-				<div class="col-xs-8">
+				<div class="col-sm-8">
 					<!-- nav bar here -->
 				</div>
 
@@ -36,15 +36,62 @@
 
 	<main>
 
-		<div class="container-fluid">
+		<div class="container-fluid main-search">
 			<div class="row">
-				<div class="col-xs-18">
-					<h1>Main Search!</h1>
-					<form action="" method="get" id="main-search">
-						<label for="key-word">Key Word</label>
-						<input type="search" name="key-word" id="key-word">
-						<!-- <input type="submit" value="Search!"> -->
-						<!-- <button type="submit" value="Search!" class="btn btn-default">Search!</button> -->
+				<div class="col-sm-12">
+					<h3>Main Search!</h3>
+					<form action="" method="get" id="main-search" autocomplete="on">
+					<div class="form-group">
+						<label for="key-word">I want Yoga with...  <label>
+						<input type="text" class="form-control" id="key-word">
+					</div>
+					
+					
+					<div class="form-group">
+				    	<label for="select_style">Chose the Yoga Style</label>
+				    		<select class="form-control" id="select_style">
+				    			<span data-bind="label">Select One</span>&nbsp;<span class="caret"></span>
+
+				      			<option>Hatha</option>
+				      			<option>Vinyasa</option>
+				      			<option>Ashtanga</option>
+				      			<option>Power</option>
+				      			<option>bikram</option>
+				      			<option>Jivamukti</option>
+				      			<option>Iyengar</option>
+				      			<option>Anusara</option>
+				      			<option>Sivananda</option>
+				      			<option>Viniyoga</option>
+				      			<option>Kundalini</option>
+				      			<option>Yin</option>
+				      			<option>Integrative Yoga Therapy (IYT)</option>
+				      			<option>Restorative</option>
+				    		</select>
+				  	</div>
+
+
+					<!-- <div class="form-group">	
+						<label for="style">Style</label>
+						<input type="text" class="form-control" id="style">
+					</div>
+					 -->
+
+
+					<div class="form-group">
+						<label for="level">Level</label>
+						<input type="text" class="form-control" id="level">
+					</div>
+					<div class="form-group">
+						<label for="length">Length</label>
+						<input type="text" class="form-control" id="length">
+					</div>
+					<div class="form-group">
+						<label for="location">Location</label>
+						<input type="text" class="form-control" id="location">
+					</div>
+
+					<button type="search" value="search" class="btn btn-search">Find!</button>
+
 
 					</form>
 				</div>
@@ -53,31 +100,6 @@
 		</div>
 
 
-
-		<h1>Filter your search</h1>
-		<!-- This form was built using Boostrap -->
-		<form>
-  			<div class="form-group">
-    			<label for="inputLevel">Chose Your Level</label>
-    			<input type="text" class="form-control" id="inputLevel">
- 			 </div>
- 			 <div class="form-group">
-    			<label for="inputLength">Length</label>
-    			<input type="number" class="form-control" id="inputLength">
- 			 </div>
- 			 <div class="form-group">
-    			<label for="inputStyle">Style</label>
-    			<input type="text" class="form-control" id="inputStyle">
- 			 </div>
- 			 <div class="form-group">
-    			<label for="inputLocation">Location</label>
-    			<input type="text" class="form-control" id="inputLocation">
- 			 </div>
-
-
-  			<button type="submit" value="submit" class="btn btn-filtered">Submit(Search!)</button>
-			
-			</form>
 			
 			<div id="results" class="container">
 				<!-- results  will show here -->
@@ -89,8 +111,6 @@
 	<footer></footer>
 
 	
-		<!-- Google client library + a cxall back function to check if API is ready -->
-	<!-- <script src="https://apis.google.com/js/api.js? onload=init"></script> -->
 </body>
 </html>
 
