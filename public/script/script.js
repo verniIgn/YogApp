@@ -11,100 +11,105 @@ var sivananda = "Sivananda Yoga: Sivananda yoga is a form of hatha yoga founded 
 var viniyoga = "Viniyoga:  Viniyoga refers to an approach to yoga that adapts the various means and methods of practice to the unique condition, needs and interests of the individual. Created by T.K.V. Desikachar, the goal is to give the practitioner the tools to individualize and actualize the process of self-discovery and personal transformation.";
 var kundalini = "Kundalini Yoga: Kundalini yoga incorporates repeated movements or exercises, dynamic breathing techniques, chanting, meditation and mantras. Each specific kundalini exercise, referred to as a kriya, is a movement that is often repeated and is synchronized with the breath. The practice is designed to awaken the energy at the base of the spine in order to draw it upward through each of the seven chakras. Brought to the west by Yogi Bhajan, this form of yoga looks and feels quite different than any other, due to its focus on repetitive, enhanced breathing and the movement of energy through the body.";
 var yin = "Yin Yoga:  Yin yoga is a slow-paced style of yoga in which poses are held for five minutes or longer. Even though it is passive, yin yoga can be quite challenging due to the long holds, particularly if your body is not used to it. The purpose is to apply moderate stress to the connective tissue - the tendons, fascia and ligaments - with the aim of increasing circulation in the joints and improving flexibility. It was founded and first taught in the U.S. in the late 1970s by martial arts expert and Taoist yoga teacher Paulie Zink. Yin-style yoga is now being taught across North America and in Europe, due in large part to two of the more prominent instructors, Paul Grilley and Sarah Powers.";
- var integrative = "Integrative Yoga Therapy (IYT): Integrative yoga therapy brings together asanas, pranayama, mudra, yoga nidra, mantra and meditation into a complete package where they can be utilized for therapy. Founded by Joseph Le Page in 1993, IYT was an attempt to create a training program with the focus on yoga as a healing art, and has designed programs specifically for medical and mainstream wellness settings, including hospital and rehabilitation centres.";
- var restorative = "Restorative Yoga: Restorative yoga is a gentle, relaxing, passive form of yoga that allows students to relax and release the body into a gentle stretch that is held for as long as 10 minutes. This style makes use of a wide range of props, including bolsters, blocks, straps and blankets. The intention is to provide support within each pose, making it easier to completely let go."; 
+var integrative = "Integrative Yoga Therapy (IYT): Integrative yoga therapy brings together asanas, pranayama, mudra, yoga nidra, mantra and meditation into a complete package where they can be utilized for therapy. Founded by Joseph Le Page in 1993, IYT was an attempt to create a training program with the focus on yoga as a healing art, and has designed programs specifically for medical and mainstream wellness settings, including hospital and rehabilitation centres.";
+var restorative = "Restorative Yoga: Restorative yoga is a gentle, relaxing, passive form of yoga that allows students to relax and release the body into a gentle stretch that is held for as long as 10 minutes. This style makes use of a wide range of props, including bolsters, blocks, straps and blankets. The intention is to provide support within each pose, making it easier to completely let go.";
 
+
+function insertTitle() {
+  return '<div class="container-fluid"><h1>Your Results</h1></div>';
+}
 
 function embedYouTube(videoId) {
+  return `<iframe width="640" height="360" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscree></iframe>`;
 
-  return `<div class="embed-responsive row">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${videoId}"></iframe>
-  </div>`;
+  // return `<iframe width="854" height="480" src="https://www.youtube.com/embed/V5i5Qz2IGJE" frameborder="0" allowfullscreen></iframe>`
 }
 
 
-function  getHTML(result) {
-    var title = `<h2>Title: ${result.snippet.title}</h2>`; //only back tick if you want to insert a var
-    var description = `<h3>Description: ${result.snippet.description}<h3>`;
-    var channelTitle = `<h4>Channel Title: ${result.snippet.channelTitle}</h4>`;
-    var videoDate = `<h5>Published: ${result.snippet.publishedAt}</h5>`; 
-    var thumb = `<img src=${result.snippet.thumbnails.high.url}></img>`;
-    var itemHTML = title + description + channelTitle + videoDate + thumb + embedYouTube(result.id.videoId);
+function getHTML(result) {
+  var title = `<h2>Title: ${result.snippet.title}</h2>`;
+  var description = `<div class="descrip"><h3>Description: ${result.snippet.description}</h3></div>`;
+  var channelTitle = `<h4>Channel Title: ${result.snippet.channelTitle}</h4>`;
+  var videoDate = `<h5>Published: ${result.snippet.publishedAt}</h5>`;
+  var thumb = `<img src=${result.snippet.thumbnails.high.url}></img>`;
+  var videoId = `${result.id.videoId}`;
 
-    return $(itemHTML);
+  var itemHTML = title + description + channelTitle + videoId + videoDate + thumb;
+
+  return $(itemHTML);
 }
 
 
-$(document).ready(function(){
+$(document).ready(function() {
 
-//$('#key-word').html('');
+  //$('#key-word').html('');
 
-//prevent submit of form
-$("#main-search").on("submit", function(event) {
-  event.preventDefault();
+  //prevent submit of form
+  $("#main-search").on("submit", function(event) {
+    event.preventDefault();
 
-  //grab data to search from user
-  var q = $('#key-word').val();
-  // var style = $('#select_style').val();
-  var level = $('#level').val();
-  var length = $('#length').val();
+    //grab data to search from user
+    var q = $('#key-word').val();
+    var style = $('#exampleSelect1').val();
+    var level = $('#level').val();
+    var length = $('#length').val();
+    var loc = $('#location').val();
+    var rad = $('#radius').val();
+
+    
+  //   $('#displayStyle').click(function()) {
+
+  //       if (style === 'Hatha') {
+
+  //         var hatha = 'Hatha Yoga: Hatha is a general category that includes most yoga styles. It is an old system that includes the practice of asanas (yoga postures) and pranayama (yoga breathing exercises), which help bring peace to the mind and body, preparing the body for deeper spiritual practices such as meditation. Today, the term, hatha, is used in such a broad way that it is difficult to know what a particular hatha yoga class will be like. In most cases, however, it will be relatively gentle, slow and great for beginners or students who prefer a more relaxed style where they hold poses longer. It can vary a lot, so it is a good idea to call the studio before attending the class.';
+
+  //         $('#displayStyle').append(hatha);
+
+  //   }    
+  // }
+
+    
 
 
-  // GET request on API
-  $.get(
-    'https://www.googleapis.com/youtube/v3/search', {
-      part: "snippet, id", 
-      type: "video",
-      topicId: '/m/019_rr',
-      regionCode: 'US',
-      // locationRadius: location,
-      // videoDuration: length, 
-      q: `${q} yoga ${level}`, //query
-      maxResults: 10,
-      key: 'AIzaSyAWNfrQ0BYSa7JtuRpT2UnvsqQBP1G0Yic'},
-      function(data) {
-        //next and prev video arrows
-        var nextPageToken = data.nextPageToken;
-        var prevPageToken = data.prevPageToken;
+    // GET request on API
+    $.get(
+      'https://www.googleapis.com/youtube/v3/search', {
+        part: "snippet, id",
+        type: "video",
+        topicId: '/m/019_rr',
+        regionCode: 'US',
+        location: loc,
+        locationRadius: rad,
+        videoDuration: length,
+        q: `${q} yoga ${style} ${level}`, //query
+        maxResults: 10,
+        key: 'AIzaSyAWNfrQ0BYSa7JtuRpT2UnvsqQBP1G0Yic'
+      }, function(data) {
+       
 
         $('#results').html('');
-          // loops thru the items 
-          $.each(data.items, function(i, item) {
-          //function that will manage the output 
-          var itemHTML = getHTML(item);
-          //appemnd results to DOM
-          $('#results').append(itemHTML);
-        });     
+        // loops thru the items 
+        $.each(data.items, function(i, item) { //will manage the output 
+            
+            var itemHTML = getHTML(item);
+            //appemnd results to DOM
+            $('#results').append(itemHTML);
 
-        $("#results > img").click(function(){
-            // alert("Hello");
-            // $('<iframe>').attr("src");
-            $(this).append(embedYouTube()); 
-
+            $("#results > img").click(function() {
+          // console.log(data.items);
+           console.log(item);
+            // console.log($(this));         
+          $(this).replaceWith(embedYouTube(item.id.videoId));
         });
 
 
-});
+        });
+        
+        $("#results").prepend(insertTitle());
 
-      
-     
-    
-}); 
+      });
+
+  });
 
 
 }); //end $(document).ready
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  

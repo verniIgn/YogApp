@@ -1,6 +1,107 @@
-.form-control:focus {
+html body {
+	background: url('https://blog.bufferapp.com/wp-content/uploads/2015/06/Cliff-Scenic.jpeg') fixed; 
+  	background-size: cover;
+}
+
+
+
+/*.form-control:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}*/
+
+
+
+.nav-top {
+	float: right;
+
+}
+.nav-top h1 a {
+	text-decoration: none;
+  	color: white;
+}
+.nav-top ul {
+	margin: 0;
+  	list-style: none;
+  	padding-top: 35px;
+}
+.nav-top ul li {
+	display: inline-block;
+}
+.nav-top ul li a {
+	font-size: 30px;
+  	color: orange;
+	font-family: 'Cormorant Infant', serif;
+  	font-weight: bold;
+  	text-decoration: none;
+  	padding-right: 70px;
+  	margin: 0;
+}
+.nav-top ul li a:hover {
+	color: #C86D36;
+}
+
+.searchTitle {
+	margin-bottom: 30px;
+}
+
+/*svg {*/
+  /* border: 1px solid black; */
+  /*margin: 0;
+  position: left;
+  height: 200px;
+  width: 300px;
+  margin: 10vh;
+  transform: translateY(-40%);
+}*/
+
+
+/*MAIN*/
+
+header h1 {
+	font-family: 'Lobster', cursive;
+	font-size: 100px;
+	letter-spacing: 10px;
+	color: orange;
+	padding-left: 30px;
+	margin-bottom: 20px; 
+}
+
+#mainLogo h2{
+	font-family: 'Lobster', cursive;
+	color: orange;
+	padding-left: 50px;
+	margin-bottom: 70px;
+
+}
+
+
+label {
+	color: orange;
+}
+
+h3 {
+	color: purple;	
+}
+
+
+#results {
+	margin: 0 auto;
+	color: white;
+	font-family: 'Bitter', serif;
+	border-color: #3C5661;
+	border-left: 5px solid #3C5661;
+
+}
+
+#results h2 {
+	color: black;
+	font-weight: bold;
+}
+
+#results h3 {
+	color: purple;
+	font-size: 20px;
 }

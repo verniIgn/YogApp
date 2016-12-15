@@ -1,127 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <html>
+
 <head>
-	<title>YogApp</title>
-	<meta charset="utf-8">
-	<meta name="description" content="Q1 YogApp Project">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-	<script type="text/javascript" src="script/script.js"></script>
-	<!-- CSS link -->
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<!-- BOOTSTRAP Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YogApp</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Q1 YogApp Project">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+    <!-- CSS link -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <!-- BOOTSTRAP Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
-
 <body>
-	<div class="container-fluid">
-		<div class="row">
-			<header>
-				<div class="col-sm-4">
-				<h1>Yog.App</h1>
-					<h2>YouTube's Best Yoga Content</h2>
-				</div>
-				<div class="col-sm-8">
-					<!-- nav bar here -->
-				</div>
+    <div class="container-fluid headerMain">
+        <div class="row" id="headerRow">
+            <header>
+                <div class="col-sm-6" id="mainLogo">
+                    <h1>Yog.App</h1>
+                    <h2>Where beginners begin...</h2>
+                </div>
+                <div class="col-xs-6">
+						
+                
+              		<nav class="nav-top">
+                		<ul>
+                  			<li><a href="">Styles</a></li>
+                  			<li><a href="">Asanas</a></li>
+                  			<li><a href="">Meditation</a></li>
+                  			<li><a href="">About</a></li>
+               			</ul>
+              		</nav>
+            	</div>
+                <!-- <div class="col-sm-8 animation">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" width="2000" height="1000" version="1.0">
+					<g transform="translate(300, 250)">
+					    <g transform="rotate(0, -200, 130)">
+					        <g transform="rotate(0, 0, 0)"> -->
+					            <!--ani body-->
+					            <!-- <g transform="rotate( 0,0,-8)">
+					                <path d="M0 -110 l0 100" fill="none" stroke="red" stroke-width="3">
+					                    <animate dur="8s" repeatCount="indefinite" attributeName="d" values="
+					M0 -100 c-10 50 10 50 0 100;
+					M0 -100 c0 50 0 50 0 90;
+					M0 -100 c-30 50 -20 50 0 90;
+					M0 -100 c0 50 0 50 0 90;
+					M0 -100 c-20 70 -20 50 0 90;
+					M0 -100 c-10 70 -10 50 0 95;
+					M0 -80 c0 70 0 50 0 95;
+					M0 -80 c0 70 0 50 0 95;
+					M0 -80 c0 70 0 50 0 95;
+					M-60 -75 c40 30 50 50 60 95;
+					M-60 -50 c0 30 0 50 0 100;
+					M-60 -40 c-40 25 -40 25 -80 50;
+					M-60 -50 c0 30 0 50 0 100;
+					M0 -100 c-10 70 -10 50 0 95;
+					M0 -100 c-20 70 -20 50 0 90;
+					M0 -100 c-10 50 10 50 0 100;">
+					                </path> -->
+					                <!--        arms-->
+					                <!-- <path d="M0 -100 l0 -45 l0 -45" fill="none" stroke="red" stroke-width="3">
+					                    <animate dur="8s" repeatCount="indefinite" attributeName="d" values="
+					M0 -90 l-5 40 l10 40;
+					M0 -100 l0 -45 l0 -45;
+					M0 -100 l45 10 l45 10;
+					M0 -100 l45 0 l45 0;
+					M0 -100 l45 -8 l45 -8;
+					M0 -100 l45 -8 l45 -8;
+					M0 -80 l45 -18 l45 -18;
+					M0 -80 l50 10 l50 10;
+					M0 -80 l-10 50 l50 -50;
+					M-60 -75 l50 10 l50 -15;
+					M-60 -50 l50 -15 l50 -15;
+					M-60 -40 l50 -20 l50 -20;
+					M-60 -50 l50 -15 l70 -15;
+					M0 -100 l45 -8 l70 -8; 
+					M0 -100 l45 -8 l45 -8; 
+					M0 -90 l-5 40 l10 40;">
+					                </path> -->
+					                <!--    ani  head-->
+					               <!--  <circle cx="0" cy="-140" r="30" stroke="red" stroke-width="3" fill="none">
+					                    <animate dur="8s" repeatCount="indefinite" attributeName="cy" values="
+					-130; -130; -130; -130; -130; -130; -110; -110; -110;-90; -70; -50; -70; -130; -130; -130" />
+					                    <animate dur="8s" repeatCount="indefinite" attributeName="cx" values="
+					0; 0; 0; 0; 0; 0; 0; 0; 0;-85; -40; -30; -40; 0; 0; 0" />
+					                </circle>
+					                <animateTransform attributeName="transform" attributeType="XML" type="rotate" fill="freeze" values="
+					0,0,-8;
+					0,0,-8;
+					130,0,-8;
+					90, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					130, 0, -8;
+					0,0,-8" dur="8s" repeatCount="indefinite" />
+					            </g> -->
+					            <!-- ani leg  -->
+					            <!-- <g>
+					                <path d="M0 -10 l0 45 l0 45" fill="none" stroke="red" stroke-width="3">
+					                    <animate dur="8s" repeatCount="indefinite" attributeName="d" values="
+					M0 0 l5 65 l-10 65;
+					M0 -10 l0 70 l0 70;
+					M0 -10 l0 70 l0 70;
+					M0 -10 l0 70 l0 70;
+					M0 -10 l0 70 l0 70;
+					M0 -10 l70 40 l-70 40;
+					M0 -10 l0 70 l0 70;
+					M0 -10 l0 70 l0 70;
+					M0 -10 l0 70 l0 70;
+					M0 -10 l0 70 l0 70;
+					M-60 24 l60 10 l0 80;
+					M-136 -13 l70 60 l70 60;
+					M-60 24 l60 10 l0 80;
+					M0 -10 l70 40 l-70 40;
+					M0 -10 l0 70 l0 70;
+					M0 0 l5 65 l-10 65;">
+					                </path>
+					                <animateTransform attributeName="transform" attributeType="XML" type="rotate" fill="freeze" values="
+					0,0,-10;
+					0,0,-10;
+					0,0,-10;
+					0, 0, -10;
+					0, 0, -10;
+					120, 0, -10;
+					130, -5 , -20;
+					130, -5 , -20;
+					130, -5 , -20;
+					130, -5 , -20;
+					130, -5 , -20;
+					130, -5 , -20;
+					130, -5 , -20;
+					120, 0 , -10;
+					0, 0, -10;
+					0, 0, -10" dur="8s" repeatCount="indefinite" />
+					            </g>
+					            <animateTransform attributeName="transform" attributeType="XML" type="rotate" fill="freeze" values="
+					0,  25, 80;
+					0,  25, 80;
+					0, 25, 80;
+					0, 25, 80;
+					0, 25, 80;
+					0, 25, 80;
+					0, 25, 80;
+					-65, 25, 80;
+					-65, 25, 80;
+					-65, 25, 80;
+					-65, 25, 80;
+					-65, 25, 80;
+					-65, 25, 80;
+					0, 25, 80;
+					0, 25, 80;
+					0, 25, 80;" dur="8s" repeatCount="indefinite" />
+					        </g>
+					        <animateTransform attributeName="transform" attributeType="XML" type="rotate" fill="freeze" values="
+					0, -200, 130;
+					0, -200, 130
+					0, -200, 130;
+					0, -200, 130;
+					0, -200, 130;
+					0, -200, 130;
+					0, -200, 130;
+					0, -200, 130;
+					15, -200, 130;
+					15, -200, 130;
+					15, -200, 130;
+					15, -200, 130;
+					15, -200, 130;
+					0, -200, 130;
+					0, -200, 130;
+					0, -200, 130;" dur="8s" repeatCount="indefinite" />
+					    </g>
+					    <path d="M-250 155 l300 0" fill="none" stroke="" stroke-width="50" />
+					    <path d="M-250 130 l300 0" fill="none" stroke="red" stroke-width="3" />
+					</g>
+					</svg>
+				</div> -->
+            </header>
+        </div>
+    </div>
+    <main>
+        <div class="container-fluid main-search">
+            <div class="row">
+                <div class="col-sm-4 override">
+                	<div class="searchTitle">
+                    <h3>Search:</h3>
+                    </div>
+                    <form action="" method="get" id="main-search" autocomplete="on">
+                        <div class="form-group">
+                            <label for="key-word">I want Yoga with...</label>
+                            <input type="text" class="form-control" id="key-word" placeholder="Enter any key-word...">
+                        </div>
+							
+						<div class="form-group">
+						   <label for="exampleSelect1">Style</label>
+						   	<select class="form-control" id="exampleSelect1">
+						      <option>Hatha</option>
+						      <option>Vinyasa</option>
+						      <option>Ashtanga</option>
+						      <option>Power</option>
+						      <option>Bikram</option>
+						      <option>Jivamukti</option>
+						      <option>Iyengar</option>
+						      <option>Anusara</option>
+						      <option>Sivananda</option>
+						      <option>Viniyoga</option>
+						      <option>Kundalini</option>
+						      <option>Yin</option>
+						      <option>Integrative</option>
+						      <option>Restorative</option>
+						    </select>
+						  </div>
 
-			</header>
-		</div>
-	</div>
- 
-
-	<main>
-
-		<div class="container-fluid main-search">
-			<div class="row">
-				<div class="col-sm-12">
-					<h3>Main Search!</h3>
-					<form action="" method="get" id="main-search" autocomplete="on">
-					<div class="form-group">
-						<label for="key-word">I want Yoga with...  <label>
-						<input type="text" class="form-control" id="key-word">
-					</div>
-					
-					
-					<div class="form-group">
-				    	<label for="select_style">Chose the Yoga Style</label>
-				    		<select class="form-control" id="select_style">
-				    			<span data-bind="label">Select One</span>&nbsp;<span class="caret"></span>
-
-				      			<option>Hatha</option>
-				      			<option>Vinyasa</option>
-				      			<option>Ashtanga</option>
-				      			<option>Power</option>
-				      			<option>bikram</option>
-				      			<option>Jivamukti</option>
-				      			<option>Iyengar</option>
-				      			<option>Anusara</option>
-				      			<option>Sivananda</option>
-				      			<option>Viniyoga</option>
-				      			<option>Kundalini</option>
-				      			<option>Yin</option>
-				      			<option>Integrative Yoga Therapy (IYT)</option>
-				      			<option>Restorative</option>
-				    		</select>
-				  	</div>
 
 
-					<!-- <div class="form-group">	
-						<label for="style">Style</label>
-						<input type="text" class="form-control" id="style">
-					</div>
-					 -->
+                        <!-- <div class="form-group">
+                            <label for="level">Style</label>
+                            <input type="text" class="form-control" id="style">
+                        </div> -->
+                        <div class="form-group">
+                            <label for="level">Level</label>
+                            <input type="text" class="form-control" id="level">
+                        </div>
+                        <div class="form-group">
+                            <label for="length">Length</label>
+                            <input type="text" class="form-control" id="length" placeholder="You can enter 'any', 'long(+20min)', 'medium', and 'short'">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Enter your city's name...">
+                        </div>
+                        <div class="form-group">
+                            <label for="radius">Radius</label>
+                            <input type="text" class="form-control" id="radius" placeholder="">
+                        </div>
+                        <button type="search" value="search" class="btn btn-search" autofocus="">Find!</button>
+                    </form>
+                </div>
+                	<div class="col-sm-8">
+                    <div id="results" class="container-fluid">
+                        <!-- results  will show here -->
+                    </div>
+                    </div>
+
+					<div class="container-fluid" id="displayStyle">
+						<div class="row">
+							<div class="col-sm-12">
+							<!-- display style here -->
+							</div>
+						</div>
+					</div>		
 
 
-					<div class="form-group">
-						<label for="level">Level</label>
-						<input type="text" class="form-control" id="level">
-					</div>
-					<div class="form-group">
-						<label for="length">Length</label>
-						<input type="text" class="form-control" id="length">
-					</div>
-					<div class="form-group">
-						<label for="location">Location</label>
-						<input type="text" class="form-control" id="location">
-					</div>
-
-					<button type="search" value="search" class="btn btn-search">Find!</button>
 
 
-					</form>
-				</div>
-				
-			</div>
-		</div>
-
-
-			
-			<div id="results" class="container">
-				<!-- results  will show here -->
-			</div>
-
-	</main>
-	
-
-	<footer></footer>
-
-	
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    	
+    </footer>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
