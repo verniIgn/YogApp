@@ -20,7 +20,7 @@ function insertTitle() {
 }
 
 function embedYouTube(videoId) {
-  return `<iframe width="640" height="360" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscree></iframe>`;
+  return `<iframe width="640" height="360" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
 
   // return `<iframe width="854" height="480" src="https://www.youtube.com/embed/V5i5Qz2IGJE" frameborder="0" allowfullscreen></iframe>`
 }
@@ -34,15 +34,36 @@ function getHTML(result) {
   var thumb = `<img src=${result.snippet.thumbnails.high.url}></img>`;
   var videoId = `${result.id.videoId}`;
 
-  var itemHTML = title + description + channelTitle + videoId + videoDate + thumb;
+  var itemHTML = title + description + channelTitle + thumb;
 
   return $(itemHTML);
 }
 
+// displays style textbox
+$('#displayStyle').click(function() {
+
+         $('#displayStyle').html('');
+
+        if (style === 'Hatha') {
+
+          var hatha = 'Hatha Yoga: Hatha is a general category that includes most yoga styles. It is an old system that includes the practice of asanas (yoga postures) and pranayama (yoga breathing exercises), which help bring peace to the mind and body, preparing the body for deeper spiritual practices such as meditation. Today, the term, hatha, is used in such a broad way that it is difficult to know what a particular hatha yoga class will be like. In most cases, however, it will be relatively gentle, slow and great for beginners or students who prefer a more relaxed style where they hold poses longer. It can vary a lot, so it is a good idea to call the studio before attending the class.';
+
+          $('#displayStyle').prepend(hatha);
+
+        } else if (style === 'Vinyasa') {
+
+           var vinyasa = 'Vinyasa: Like hatha, vinyasa is a general term that describes many different styles of yoga. It essentially means movement synchronized with breath and is a vigorous style based on a rapid flow through sun salutations. You may also see a vinyasa yoga class referred to as a flow class, which refers to the continuous flow from one posture to the next.';
+
+          $('#displayStyle').append(vinyasa);
+
+
+        }
+
+      });
+
 
 $(document).ready(function() {
 
-  //$('#key-word').html('');
 
   //prevent submit of form
   $("#main-search").on("submit", function(event) {
@@ -51,25 +72,12 @@ $(document).ready(function() {
     //grab data to search from user
     var q = $('#key-word').val();
     var style = $('#exampleSelect1').val();
-    var level = $('#level').val();
-    var length = $('#length').val();
-    var loc = $('#location').val();
-    var rad = $('#radius').val();
+    var level = $('#selectLevel').val();
+    var length = $('#selectLength').val();
+    // var loc = $('#location').val();
+    // var rad = $('#radius').val();
 
-    
-  //   $('#displayStyle').click(function()) {
-
-  //       if (style === 'Hatha') {
-
-  //         var hatha = 'Hatha Yoga: Hatha is a general category that includes most yoga styles. It is an old system that includes the practice of asanas (yoga postures) and pranayama (yoga breathing exercises), which help bring peace to the mind and body, preparing the body for deeper spiritual practices such as meditation. Today, the term, hatha, is used in such a broad way that it is difficult to know what a particular hatha yoga class will be like. In most cases, however, it will be relatively gentle, slow and great for beginners or students who prefer a more relaxed style where they hold poses longer. It can vary a lot, so it is a good idea to call the studio before attending the class.';
-
-  //         $('#displayStyle').append(hatha);
-
-  //   }    
-  // }
-
-    
-
+    $("#results").prepend(insertTitle());
 
     // GET request on API
     $.get(
@@ -78,8 +86,8 @@ $(document).ready(function() {
         type: "video",
         topicId: '/m/019_rr',
         regionCode: 'US',
-        location: loc,
-        locationRadius: rad,
+        // location: loc,
+        // locationRadius: rad,
         videoDuration: length,
         q: `${q} yoga ${style} ${level}`, //query
         maxResults: 10,
@@ -87,7 +95,7 @@ $(document).ready(function() {
       }, function(data) {
        
 
-        $('#results').html('');
+       
         // loops thru the items 
         $.each(data.items, function(i, item) { //will manage the output 
             
@@ -105,7 +113,7 @@ $(document).ready(function() {
 
         });
         
-        $("#results").prepend(insertTitle());
+        
 
       });
 
